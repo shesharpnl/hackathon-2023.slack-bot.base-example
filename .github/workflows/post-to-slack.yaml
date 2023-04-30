@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Get random job
         run: |
-          fetch('https://shesharpnl.github.io/hackathon-2023.sourcestack-data/assets/junior-nl.json')
+          fetch("https://shesharpnl.github.io/hackathon-2023.sourcestack-data/assets/junior-nl.json")
             .then(response => response.json())
             .then(data => {
               const randomJob = data.data[Math.floor(Math.random() * data.data.length)];
