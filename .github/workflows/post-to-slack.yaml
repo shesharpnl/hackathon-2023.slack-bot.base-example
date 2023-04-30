@@ -1,7 +1,7 @@
 name: Post a random job on Slack every minute
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '* * * * *'
 jobs:
   post_job_to_slack:
     runs-on: ubuntu-latest
