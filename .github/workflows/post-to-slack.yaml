@@ -1,7 +1,12 @@
 name: Post random job on Slack
-on: push
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  post_job_opening_to_slack:
+  post_job_to_slack:
     runs-on: ubuntu-latest
     steps:
       - name: Get random job
@@ -15,91 +20,5 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           random_job="${{ steps.get_job.outputs.random_job }}"
-          curl -X POST -H 'Content-type: application/json' --data-raw '{
-            "attachments": [
-               {
-                 color: "#00FF00",
-                 blocks: [
-                   {
-                     type: "header",
-                     text: {
-                       type: "plain_text",
-                       text: "New job alert! :tada:"
-                     }
-                   },
-                   {
-                     type: "section",
-                     text: {
-                       type: "mrkdwn",
-                       text: "A new job posting has just been added to our website. Check it out!"
-                     }
-                   },
-                   {
-                     type: "section",
-                     fields: [
-                       {
-                         type: "mrkdwn",
-                         text: "*Job title:*\n :briefcase: '${random_job.job_name}'"
-                       },
-                       {
-                         type: "mrkdwn",
-                         text: "*Location:*\n :round_pushpin: '${random_job.job_location}'"
-                       },
-                       {
-                         type: "mrkdwn",
-                         text: "*Department:*\n :gear: '${random_job.department}'"
-                       },
-                       {
-                         type: "mrkdwn",
-                         text: "*Hours:*\n :watch: '${random_job.hours}'"
-                       },
-                       {
-                         type: "mrkdwn",
-                         text: "*Remote:*\n :house_with_garden: '${random_job.remote:-N/A}'"
-                       }
-                     ]
-                   },
-                   {
-                     type: "section",
-                     fields: [
-                       {
-                         type: "mrkdwn",
-                         text: "*Company:*\n :office: <http://'${random_job.company_url}'|'${random_job.company_name}'>"
-                       },
-                       {
-                         type: "mrkdwn",
-                         text: "*Tags:*\n :label: '${random_job.tags_matched | join(", ")}'"
-                       }
-                     ]
-                   },
-                   {
-                     type: "section",
-                     fields: [
-                       {
-                         type: "mrkdwn",
-                         text: "*Seniority:*\n :mortar_board: '${random_job.seniority}'"
-                       },
-                       {
-                         type: "mrkdwn",
-                         text: "*Category:*\n :mag_right: '${random_job.categories | join(", ")}'"
-                       }
-                     ]
-                   },
-                   {
-                     type: "actions",
-                     elements: [
-                       {
-                         type: "button",
-                         text: {
-                           type: "plain_text",
-                           text: "Apply Now! :rocket:"
-                         },
-                         style: "primary",
-                         url: "https://'${random_job.post_url}'"
-                       }
-                     ]
-                   }
-                 ]
-               }
-             ]
-            }' $SLACK_WEBHOOK_URL
+          payload="{\"attachments\": [{\"color\": \"#00FF00\",\"blocks\": [{\"type\": \"header\",\"text\": {\"type\": \"plain_text\",\"text\": \"New job alert! :tada:\"}},{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"A new job posting has just been added to our website. Check it out!\"}}]}]}"
+          curl -X POST -H "Content-type: application/json" --data-raw "${payload}" "${SLACK_WEBHOOK_URL}"
