@@ -1,24 +1,58 @@
 name: Post random job on Slack
-
-on:
-  push:
-    branches:
-      - main
-
+on: push
 jobs:
   post_job_to_slack:
     runs-on: ubuntu-latest
     steps:
       - name: Get random job
         run: |
-          job_data=$(curl -s https://shesharpnl.github.io/hackathon-2023.sourcestack-data/assets/junior-nl.json | jq '.data | .[]' | shuf -n 1)
-          echo "::set-output name=random_job::$job_data"
+          fetch('https://shesharpnl.github.io/hackathon-2023.sourcestack-data/assets/junior-nl.json')
+            .then(response => response.json())
+            .then(data => {
+              const randomJob = data.data[Math.floor(Math.random() * data.data.length)];
+              console.log(`::set-output name=random_job::${JSON.stringify(randomJob)}`);
+            })
+            .catch(error => console.error(error));
         id: get_job
       - name: Post to Slack
         if: ${{ steps.get_job.outputs.random_job != '' }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
-          random_job="${{ steps.get_job.outputs.random_job }}"
-          payload="{\"attachments\": [{\"color\": \"#00FF00\",\"blocks\": [{\"type\": \"header\",\"text\": {\"type\": \"plain_text\",\"text\": \"New job alert! :tada:\"}},{\"type\": \"section\",\"text\": {\"type\": \"mrkdwn\",\"text\": \"A new job posting has just been added to our website. Check it out!\"}}]}]}"
-          curl -X POST -H "Content-type: application/json" --data-raw "${payload}" "${SLACK_WEBHOOK_URL}"
+          const randomJob = ${{ steps.get_job.outputs.random_job }};
+          const payload = {
+            "attachments": [
+              {
+                "color": "#00b29a",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": ":star: *New Job Posting: {{randomJob.job_name}}* :star:"
+                    }
+                  },
+                  {
+                    "type": "divider"
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Location*: {{randomJob.job_location}}\n*Company*: {{randomJob.company_name}}\n*Hours*: {{randomJob.hours}}\n*Tags Matched*: {{randomJob.tags_matched}}\n*Tag Categories*: {{randomJob.tag_categories}}\n*Seniority*: {{randomJob.seniority}}\n*Country*: {{randomJob.country}}\n<View Job Posting|{{randomJob.post_url}}>"
+                    }
+                  }
+                ]
+              }
+            ]
+          };
+          const options = {
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          };
+          fetch(process.env.SLACK_WEBHOOK_URL, options)
+            .then(response => console.log(`Slack response: ${response.status} ${response.statusText}`))
+            .catch(error => console.error(error));
