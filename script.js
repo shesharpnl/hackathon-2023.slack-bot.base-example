@@ -26,7 +26,7 @@ fetch(url)
                                 "type": "section",
                                 "text": {
                                     "type": "mrkdwn",
-                                    "text": `*Location*: ${randomJob.job_location}\n*Company*: ${randomJob.company_name}\n*Hours*: ${randomJob.hours}\n*Tags Matched*: ${randomJob.tags_matched}\n*Tag Categories*: ${randomJob.tag_categories}\n*Seniority*: ${randomJob.seniority}\n*Country*: ${randomJob.country}\nView job posting: ${randomJob.post_url})`
+                                    "text": `*View job posting*: ${randomJob.post_url}\n*Seniority*: ${randomJob.seniority}\n*Location*: ${randomJob.job_location}\n*Company*: ${randomJob.company_name}\n*Hours*: ${randomJob.hours}\n*Tags Matched*: ${randomJob.tags_matched}\n*Tag Categories*: ${randomJob.tag_categories}`
                                 }
                             }
                         ]
