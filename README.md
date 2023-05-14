@@ -6,7 +6,7 @@ The bot is written in JavaScript and runs on Node.js. It uses a webhook URL to p
 
 ## Prerequisites
 
-Before you can install, use this project and add extra functionalities to it, you need to have the following software installed on your computer:
+Before you can install, use this project and add extra functionalities to it, you need to have the following prerequisites and software installed on your computer:
 
 - A personal GitHub account. If you don't already have one, you can sign up for free here.
 - Git: This is a version control system that allows you to manage and track changes to your code. You can download and install Git from the official website [here](https://git-scm.com/downloads).
