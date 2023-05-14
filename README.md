@@ -174,7 +174,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 ```
-This section defines the job that will be run by the workflow. The job is called "post_job_to_slack" and it will run on an Ubuntu environment. The first step in the job checks out the repository that contains the workflow.
+This section defines the job that will be run by the workflow. The job is called `post_job_to_slack` and it will run on an Ubuntu environment. The first step in the job checks out the repository that contains the workflow.
 
 ```yaml
       - name: Setup Node.js
@@ -190,7 +190,7 @@ This step sets up Node.js on the environment by using the `actions/setup-node` a
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 ```
-This step runs the `script.js` file in the project, which will post a random job to Slack using the `SLACK_WEBHOOK_URL` environment variable. The value of the `SLACK_WEBHOOK_URL` environment variable is retrieved from the GitHub repository's secrets.
+This step runs the `script.js` file in the project, which will post a random job to Slack using the `SLACK_WEBHOOK_URL` environment variable. The value of the `SLACK_WEBHOOK_URL` environment variable is retrieved from the [GitHub repository's secrets](#4-add-the-slack_webhook_url-secret-to-your-repository).
 
 In summary, this GitHub Actions file sets up a job that runs every 5 minutes on an Ubuntu environment, sets up Node.js version 18, checks out the repository, and runs a script that posts a random job to Slack using the `SLACK_WEBHOOK_URL` environment variable.
 
@@ -205,7 +205,7 @@ The JavaScript file contains three functions:
 
 - `generateSlackPayload(job)`: This function takes a job object and generates a Slack payload using a Slack block kit. The payload contains the job name, and the color of the attachment is set to `#00b29a`.
 
-- `postJobToSlack(webhookUrl, payload)`: This function takes a webhook URL and a payload and posts the payload to the Slack channel using a `fetch()` request. The `Content-type` header is set to `application/json`.
+- `postJobToSlack(webhookUrl, payload)`: This function takes a webhook URL and a payload and posts the payload to the Slack channel using a `fetch()` request. 
 
 
 ## Contributing
@@ -214,16 +214,14 @@ Contributions to this project are welcome! If you find a bug, have a feature req
 
 1. Fork the repository and clone it to your local machine.
 2. Create a new branch for your changes: `git checkout -b my-branch-name`
-3. Make your changes, and test them thoroughly. Make sure the existing tests still pass, and add new tests if necessary.
-4. Commit your changes with a descriptive commit message: `git commit -m "Add feature XYZ"`
+3. Make your changes, and test them thoroughly.
+4. Commit your changes with a descriptive commit message.
 5. Push your changes to your forked repository: `git push origin my-branch-name`
 6. Open a pull request against the main branch of this repository, explaining the changes you've made and why they are important.
 
 Note that this project uses GitHub Actions to automatically post a random job to a Slack channel every 5 minutes, based on data fetched from a remote JSON file. If you want to contribute with new job postings, please add it to the appropriate JSON file in the `assets` directory and submit a pull request.
 
 Thank you for your contributions!
-
-Sure, here's an example license section for the project:
 
 ## License
 
