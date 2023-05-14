@@ -107,7 +107,7 @@ You should be able to see something like this:
 
 If you encounter any issues, you can try the following steps to troubleshoot:  
 
-1. Check that the SLACK_WEBHOOK_URL secret has been added to your forked repository as described in the previous section.
+1. Check that the `SLACK_WEBHOOK_URL` secret has been added to your forked repository as described in the previous section.
 2. Make sure that the URL for the JSON file containing job data is correct and accessible.
 3. Verify that the Slack webhook URL is valid and active.
 4. Check that the script is correctly configured and all dependencies have been installed.
@@ -148,25 +148,25 @@ GitHub Workflows are a feature of GitHub Actions that allow developers to create
 
 To learn more about GitHub Actions and Workflows, you can check out the official documentation:
 
-GitHub Actions: https://docs.github.com/en/actions
+GitHub Actions: https://docs.github.com/en/actions  
 GitHub Workflows: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 
 Let's have a look at the GitHub Workflow used as part of this project.  
 You can find the GitHub workflow here: `.github/workflows/post-to-slack.yaml`.
 
-```
+```yaml
 name: Post random job on Slack every 5 minutes
 ```
 This line defines the name of the workflow. In this case, the workflow is called "Post random job on Slack every 5 minutes".
 
-```
+```yaml
 on:
   schedule:
     - cron:  '*/5 * * * *'
 ```
-This section specifies when the workflow should be triggered. In this case, the workflow is triggered on a schedule using the cron syntax, which means it will run every 5 minutes.
+This section specifies when the workflow should be triggered. In this case, the workflow is triggered on a schedule using the [cron syntax](https://cron.help/), which means it will run every 5 minutes.
 
-```
+```yaml
 jobs:
   post_job_to_slack:
     runs-on: ubuntu-latest
@@ -176,7 +176,7 @@ jobs:
 ```
 This section defines the job that will be run by the workflow. The job is called "post_job_to_slack" and it will run on an Ubuntu environment. The first step in the job checks out the repository that contains the workflow.
 
-```
+```yaml
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -184,7 +184,7 @@ This section defines the job that will be run by the workflow. The job is called
 ```
 This step sets up Node.js on the environment by using the `actions/setup-node` action. It specifies that Node.js version 18 should be used.
 
-```
+```yaml
       - name: Post random job
         run: node script.js
         env:
