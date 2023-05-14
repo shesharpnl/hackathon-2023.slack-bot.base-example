@@ -25,11 +25,12 @@ The bot is written in JavaScript and runs on Node.js. It uses a webhook URL to p
 
 Before you can install, use this project and add extra functionalities to it, you need to have the following prerequisites and software installed on your computer:
 
-- A personal GitHub account. If you don't already have one, you can sign up for free [here](https://github.com/).
-- Git: This is a version control system that allows you to manage and track changes to your code. You can download and install Git from the official website [here](https://git-scm.com/downloads).
-- A terminal: This is the application that allows you to enter commands into your computer. You can use the default terminal on your operating system, or install a third-party terminal such as [iTerm2](https://iterm2.com/) for macOS or [Windows Terminal](https://aka.ms/terminal) for Windows.
-- A code editor: This is the application that allows you to write and edit code. You can use any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/).
-- JavaScript: This is the programming language used in this project. You don't need to install it separately, as it comes pre-installed with most web browsers.
+- **A personal GitHub account**. If you don't already have one, you can sign up for free [here](https://github.com/).
+- **Git**: this is a version control system that allows you to manage and track changes to your code. You can download and install Git from the official website [here](https://git-scm.com/downloads).
+- **A terminal**: this is the application that allows you to enter commands into your computer. You can use the default terminal on your operating system, or install a third-party terminal such as [iTerm2](https://iterm2.com/) for macOS or [Windows Terminal](https://aka.ms/terminal) for Windows.
+- **A code editor**: this is the application that allows you to write and edit code. You can use any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/).
+- **JavaScript**: this is the programming language used in this project. You don't need to install it separately, as it comes pre-installed with most web browsers.
+- **A Slack webhook URL**: this is a special URL that allows your code to send messages to a Slack channel. For instructions on setting up a webhook URL, please refer to the Slack documentation.For more detailed instructions on setting up a webhook URL, please refer to the [Slack documentation](https://api.slack.com/messaging/webhooks).
 
 Once you have all of these prerequisites, you're ready to move on to the installation steps.
 
@@ -146,8 +147,8 @@ GitHub Workflows are a feature of GitHub Actions that allow developers to create
 
 To learn more about GitHub Actions and Workflows, you can check out the official documentation:
 
-GitHub Actions: https://docs.github.com/en/actions  
-GitHub Workflows: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions    
+**GitHub Actions**: https://docs.github.com/en/actions  
+**GitHub Workflows**: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions    
 
 Let's have a look at the GitHub Workflow used as part of this project.  
 You can find the GitHub workflow here: `.github/workflows/post-to-slack.yaml`.
