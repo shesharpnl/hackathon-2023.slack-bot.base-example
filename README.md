@@ -30,7 +30,7 @@ Before you can install, use this project and add extra functionalities to it, yo
 - **A terminal**: this is the application that allows you to enter commands into your computer. You can use the default terminal on your operating system, or install a third-party terminal such as [iTerm2](https://iterm2.com/) for macOS or [Windows Terminal](https://aka.ms/terminal) for Windows.
 - **A code editor**: this is the application that allows you to write and edit code. You can use any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/).
 - **JavaScript**: this is the programming language used in this project. You don't need to install it separately, as it comes pre-installed with most web browsers.
-- **A Slack webhook URL**: this is a special URL that allows your code to send messages to a Slack channel. For instructions on setting up a webhook URL, please refer to the Slack documentation.For more detailed instructions on setting up a webhook URL, please refer to the [Slack documentation](https://api.slack.com/messaging/webhooks).
+- **A Slack webhook URL**: this is a special URL that allows your code to send messages to a Slack channel. For detailed instructions on setting up a webhook URL, please refer to the [Slack documentation](https://api.slack.com/messaging/webhooks).
 
 Once you have all of these prerequisites, you're ready to move on to the installation steps.
 
