@@ -20,7 +20,7 @@ Once you have all of these prerequisites, you're ready to move on to the install
 
 To install and being able to use this Slack bot, you need to fork this repository to your own GitHub account and then clone your forked repository to your local machine.
 
-### Forking the repository
+### 1) Forking the repository
 
 Here are the steps to fork the repository:
 
@@ -28,7 +28,7 @@ Here are the steps to fork the repository:
 
 2. Click the "Fork" button in the top right corner of the repository page. This will create a copy of the repository in your own GitHub account.
 
-### Cloning the repository
+### 2) Cloning the repository
 
 Here are the steps to clone your forked repository to your local machine:
 
@@ -36,22 +36,22 @@ Here are the steps to clone your forked repository to your local machine:
 
 2. Click the "Code" button and copy the HTTPS or SSH link to the repository.
 
-3. Open your terminal and navigate to the directory where you want to store the project.
+3. Open your terminal and navigate to the directory where you want to store the project. For example: `cd ~/projects`.
 
-4. Type `git clone` followed by the repository link you copied earlier, then press Enter:
+4. Type `git clone` followed by the repository link you copied earlier, then press Enter (remember to replace `YOUR_USERNAME` with your GitHub username):
 
 ```
 git clone https://github.com/YOUR_USERNAME/hackathon-2023.slack-bot.base-example.git
 ```
 
-5. Press Enter again to execute the command. This will download the repository to your local machine. If you are cloning the repository using HTTPS, you will be prompted to enter your GitHub username and password. 
+5. Press Enter again to execute the command. This will download the repository to your local machine. If you are cloning the repository using HTTPS, you may be prompted to enter your GitHub username and password. 
 If you are cloning the repository using SSH, you will need to set up authentication via SSH. You can find instructions for doing so [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh). Once you have set up authentication via SSH, you can clone the repository using the SSH URL.
 
-### Installing dependencies
+### 3) Installing dependencies
 
 For this project, you don't need to install any extra dependencies (no need to run `npm install` or similar commands). Nice!
 
-### Add the SLACK_WEBHOOK_URL secret to your repository
+### 4) Add the SLACK_WEBHOOK_URL secret to your repository
 
 1. First, go to your forked repository on GitHub ([https://github.com/YOUR_USERNAME/hackathon-2023.slack-bot.base-example](https://github.com/YOUR_USERNAME/hackathon-2023.slack-bot.base-example)) and click on the `Settings` tab.
 
