@@ -8,10 +8,10 @@ The bot is written in JavaScript and runs on Node.js. It uses a webhook URL to p
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-    - [Forking the repository](#forking-the-repository)
-    - [Cloning the repository](#cloning-the-repository)
-    - [Installing dependencies](#installing-dependencies)
-    - [Add the SLACK_WEBHOOK_URL secret to your repository](#add-the-slack_webhook_url-secret-to-your-repository)
+    - [1) Fork the repository](#forking-the-repository)
+    - [2) Clone the repository](#cloning-the-repository)
+    - [3) Install dependencies](#installing-dependencies)
+    - [4) Add the SLACK_WEBHOOK_URL secret to your repository](#add-the-slack_webhook_url-secret-to-your-repository)
 - [Usage](#usage)
     * [Inspect the GitHub Action execution logs](#inspect-the-github-action-execution-logs)
     * [Run the script.js directly from your local machine](#run-the-scriptjs-directly-from-your-local-machine)
@@ -38,17 +38,13 @@ Once you have all of these prerequisites, you're ready to move on to the install
 
 To install and being able to use this Slack bot, you need to fork this repository to your own GitHub account and then clone your forked repository to your local machine.
 
-### 1) Forking the repository
-
-Here are the steps to fork the repository:
+### 1) Fork the repository
 
 1. Go to the repository page on GitHub: [https://github.com/shesharpnl/hackathon-2023.slack-bot.base-example](https://github.com/shesharpnl/hackathon-2023.slack-bot.base-example).  
 
 2. Click the "Fork" button in the top right corner of the repository page. This will create a copy of the repository in your own GitHub account.
 
-### 2) Cloning the repository
-
-Here are the steps to clone your forked repository to your local machine:
+### 2) Clone the repository
 
 1. Once you have forked the repository, navigate to the forked repository on your GitHub account: [https://github.com/YOUR_USERNAME/hackathon-2023.slack-bot.base-example](https://github.com/YOUR_USERNAME/hackathon-2023.slack-bot.base-example). Replace `YOUR_USERNAME` with your GitHub username.
 
@@ -65,7 +61,7 @@ git clone https://github.com/YOUR_USERNAME/hackathon-2023.slack-bot.base-example
 5. Press Enter again to execute the command. This will download the repository to your local machine. If you are cloning the repository using HTTPS, you may be prompted to enter your GitHub username and password. 
 If you are cloning the repository using SSH, you will need to set up authentication via SSH. You can find instructions for doing so [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh). Once you have set up authentication via SSH, you can clone the repository using the SSH URL.
 
-### 3) Installing dependencies
+### 3) Install dependencies
 
 For this project, you don't need to install any extra dependencies (no need to run `npm install` or similar commands). Nice!
 
