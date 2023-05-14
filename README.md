@@ -142,14 +142,12 @@ That's it! You should now be able to run the script and post a random job to the
 
 ### Scheduled GitHub Workflow
 
-GitHub Actions is a feature that allows you to automate tasks in your GitHub repository. In the context of the Slack bot project, GitHub Actions are used to schedule a workflow that posts a random job on Slack every 5 minutes. This workflow is defined in a YAML file and specifies the steps that need to be taken to run the bot. These steps include checking out the repository, setting up Node.js, and running the bot script.
-
-GitHub Workflows are a feature of GitHub Actions that allow developers to create custom workflows that are triggered by specific events or scheduled to run at specific times. In the Slack bot project, a scheduled workflow is used to run the bot every 5 minutes. This workflow is defined in a YAML file and specifies the job that needs to be run and when it should be run.
+GitHub Workflows are a feature of GitHub Actions that allow developers to create custom workflows that are triggered by specific events or scheduled to run at specific times. In this project, a scheduled workflow is used to run the bot every 5 minutes. This workflow is defined in a YAML file and specifies the job that needs to be run and when it should be run.
 
 To learn more about GitHub Actions and Workflows, you can check out the official documentation:
 
 GitHub Actions: https://docs.github.com/en/actions  
-GitHub Workflows: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+GitHub Workflows: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions    
 
 Let's have a look at the GitHub Workflow used as part of this project.  
 You can find the GitHub workflow here: `.github/workflows/post-to-slack.yaml`.
@@ -157,14 +155,14 @@ You can find the GitHub workflow here: `.github/workflows/post-to-slack.yaml`.
 ```yaml
 name: Post random job on Slack every 5 minutes
 ```
-This line defines the name of the workflow. In this case, the workflow is called "Post random job on Slack every 5 minutes".
+This line defines the name of the workflow. In this case, the workflow is called `Post random job on Slack every 5 minutes`.    
 
 ```yaml
 on:
   schedule:
     - cron:  '*/5 * * * *'
 ```
-This section specifies when the workflow should be triggered. In this case, the workflow is triggered on a schedule using the [cron syntax](https://cron.help/), which means it will run every 5 minutes.
+This section specifies when the workflow should be triggered. In this case, the workflow is triggered on a schedule using the [cron syntax](https://cron.help/), which means it will run every 5 minutes.    
 
 ```yaml
 jobs:
@@ -174,7 +172,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 ```
-This section defines the job that will be run by the workflow. The job is called `post_job_to_slack` and it will run on an Ubuntu environment. The first step in the job checks out the repository that contains the workflow.
+This section defines the job that will be run by the workflow. The job is called `post_job_to_slack` and it will run on an Ubuntu environment. The first step in the job checks out the repository that contains the workflow.    
 
 ```yaml
       - name: Setup Node.js
@@ -182,7 +180,7 @@ This section defines the job that will be run by the workflow. The job is called
         with:
           node-version: '18'
 ```
-This step sets up Node.js on the environment by using the `actions/setup-node` action. It specifies that Node.js version 18 should be used.
+This step sets up Node.js on the environment by using the `actions/setup-node` action. It specifies that Node.js version 18 should be used.    
 
 ```yaml
       - name: Post random job
@@ -190,7 +188,7 @@ This step sets up Node.js on the environment by using the `actions/setup-node` a
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 ```
-This step runs the `script.js` file in the project, which will post a random job to Slack using the `SLACK_WEBHOOK_URL` environment variable. The value of the `SLACK_WEBHOOK_URL` environment variable is retrieved from the [GitHub repository's secrets](#4-add-the-slack_webhook_url-secret-to-your-repository).
+This step runs the `script.js` file in the project, which will post a random job to Slack using the `SLACK_WEBHOOK_URL` environment variable. The value of the `SLACK_WEBHOOK_URL` environment variable is retrieved from the [GitHub repository's secrets](#4-add-the-slack_webhook_url-secret-to-your-repository).    
 
 In summary, this GitHub Actions file sets up a job that runs every 5 minutes on an Ubuntu environment, sets up Node.js version 18, checks out the repository, and runs a script that posts a random job to Slack using the `SLACK_WEBHOOK_URL` environment variable.
 
