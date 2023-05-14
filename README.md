@@ -8,7 +8,7 @@ The bot is written in JavaScript and runs on Node.js. It uses a webhook URL to p
 
 Before you can install, use this project and add extra functionalities to it, you need to have the following prerequisites and software installed on your computer:
 
-- A personal GitHub account. If you don't already have one, you can sign up for free here.
+- A personal GitHub account. If you don't already have one, you can sign up for free [here](https://github.com/).
 - Git: This is a version control system that allows you to manage and track changes to your code. You can download and install Git from the official website [here](https://git-scm.com/downloads).
 - A terminal: This is an application that allows you to enter commands into your computer. You can use the default terminal on your operating system, or install a third-party terminal such as [iTerm2](https://iterm2.com/) for macOS or [Windows Terminal](https://aka.ms/terminal) for Windows.
 - A code editor: This is an application that allows you to write and edit code. You can use any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/).
