@@ -10,9 +10,9 @@ Before you can install, use this project and add extra functionalities to it, yo
 
 - A personal GitHub account. If you don't already have one, you can sign up for free [here](https://github.com/).
 - Git: This is a version control system that allows you to manage and track changes to your code. You can download and install Git from the official website [here](https://git-scm.com/downloads).
-- A terminal: This is an application that allows you to enter commands into your computer. You can use the default terminal on your operating system, or install a third-party terminal such as [iTerm2](https://iterm2.com/) for macOS or [Windows Terminal](https://aka.ms/terminal) for Windows.
-- A code editor: This is an application that allows you to write and edit code. You can use any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/).
-- JavaScript: This is the programming language used in this project. You don't need to install it separately, as it comes pre-installed with most web browsers. However, you may want to brush up on your JavaScript skills before working with this project. There are many resources available online to help you learn JavaScript, such as [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript), [W3Schools](https://www.w3schools.com/js/), or [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+- A terminal: This is the application that allows you to enter commands into your computer. You can use the default terminal on your operating system, or install a third-party terminal such as [iTerm2](https://iterm2.com/) for macOS or [Windows Terminal](https://aka.ms/terminal) for Windows.
+- A code editor: This is the application that allows you to write and edit code. You can use any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/).
+- JavaScript: This is the programming language used in this project. You don't need to install it separately, as it comes pre-installed with most web browsers.
 
 Once you have all of these prerequisites, you're ready to move on to the installation steps.
 
