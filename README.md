@@ -4,6 +4,23 @@ This is a Slack bot that posts a random job listing to a Slack channel every 5 m
 
 The bot is written in JavaScript and runs on Node.js. It uses a webhook URL to post messages to Slack, and can be customized to fit different job listing data sources or Slack channels.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+    - [Forking the repository](#forking-the-repository)
+    - [Cloning the repository](#cloning-the-repository)
+    - [Installing dependencies](#installing-dependencies)
+    - [Add the SLACK_WEBHOOK_URL secret to your repository](#add-the-slack_webhook_url-secret-to-your-repository)
+- [Usage](#usage)
+    * [Inspect the GitHub Action execution logs](#inspect-the-github-action-execution-logs)
+    * [Run the script.js directly from your local machine](#run-the-scriptjs-directly-from-your-local-machine)
+- [How this project works](#how-this-project-works)
+    * [Scheduled GitHub Workflow](#scheduled-github-workflow)
+    * [The scheduled script written in JavaScript](#the-scheduled-script-written-in-javascript)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Prerequisites
 
 Before you can install, use this project and add extra functionalities to it, you need to have the following prerequisites and software installed on your computer:
@@ -69,16 +86,24 @@ That's it! Now the GitHub Workflow in your forked repository should be able to u
 
 ## Usage
 
+This is how the Slack bot messages will look like:
+
+![Screenshot of the bot on a Slack channel](./images/slack-messages.png)
+
 ### Inspect the GitHub Action execution logs
 
 To verify that the project works by looking at the GitHub Actions logs, you can follow these steps:  
 
 1. Go to your forked repository on GitHub and click on the "Actions" tab.
-2. You should see the "Post random job on Slack every 5 minutes" workflow listed. Click on it to view the details.
-3. In the "Jobs" section, you should see a job called "post_job_to_slack". Click on it to view the details of that job.
-4. In the job details, you should see a list of steps that were executed. The last step should be "Post random job". Click on that step to view its logs.
-5. In the logs, you should see the output of the script that was executed. Look for the line that says "Slack response: 200 OK". This indicates that the script was able to successfully post the job to Slack.
+2. You should see the `Post random job on Slack every 5 minutes` workflow listed. Click on it to view the details.
+3. In the "Jobs" section, you should see a job called `post_job_to_slack`. Click on it to view the details of that job.
+4. In the job details, you should see a list of steps that were executed. The last step should be `Post random job`. Click on that step to view its logs.
+5. In the logs, you should see the output of the script that was executed. Look for the line that says `Slack response: 200 OK`. This indicates that the script was able to successfully post the job to Slack.
 6. You can also look for any error messages in the logs to identify any issues that may have occurred during the execution of the script.
+
+You should be able to see something like this:
+
+![Screenshot of the GitHub Actions logs](./images/github-actions-logs.png)
 
 If you encounter any issues, you can try the following steps to troubleshoot:  
 
@@ -110,6 +135,8 @@ node script.js
 This will fetch job data from the specified URL, generate a Slack payload based on a random job, and post the payload to the incoming webhook URL you set up in the previous steps.
 
 That's it! You should now be able to run the script and post a random job to the Slack channel.
+
+![Screenshot of the script executed using your terminal](./images/executing-script.png)
 
 ## How this project works
 
@@ -181,8 +208,6 @@ The JavaScript file contains three functions:
 - `postJobToSlack(webhookUrl, payload)`: This function takes a webhook URL and a payload and posts the payload to the Slack channel using a `fetch()` request. The `Content-type` header is set to `application/json`.
 
 
-Sure, here's a possible Contributing section for the readme file of this project:
-
 ## Contributing
 
 Contributions to this project are welcome! If you find a bug, have a feature request, or want to contribute code, please follow these guidelines:
@@ -200,6 +225,6 @@ Thank you for your contributions!
 
 Sure, here's an example license section for the project:
 
-# License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
