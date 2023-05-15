@@ -1,6 +1,7 @@
 # hackathon-2023.slack-bot.base-example
 
-This is a Slack bot that posts a random job listing to a Slack channel every 5 minutes. The job listings are sourced from a JSON file containing data about various job postings. This bot is useful for keeping people informed about available job opportunities and providing exposure to various roles.
+This is a Slack bot that posts a random job listing to a Slack channel every 5 minutes. The job listings are sourced from a JSON file containing data about various job postings.
+This bot is useful for keeping people informed about available job opportunities and providing exposure to various roles.
 
 The bot is written in JavaScript and runs on Node.js. It uses a webhook URL to post messages to Slack, and can be customized to fit different job listing data sources or Slack channels.
 
@@ -217,6 +218,10 @@ Contributions to this project are welcome! If you find a bug, have a feature req
 Note that this project uses GitHub Actions to automatically post a random job to a Slack channel every 5 minutes, based on data fetched from a remote JSON file. If you want to contribute with new job postings, please add it to the appropriate JSON file in the `assets` directory and submit a pull request.
 
 Thank you for your contributions!
+
+## Credits
+
+The job data has been retrieved using [SourceStack](sourcestack.co).
 
 ## License
 
