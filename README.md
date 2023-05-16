@@ -39,6 +39,12 @@ Once you have all of these prerequisites, you're ready to move on to the install
 
 To install and being able to use this Slack bot, you need to fork this repository to your own GitHub account and then clone your forked repository to your local machine.
 
+- [1) Fork the repository](#forking-the-repository)
+- [2) Clone the repository](#cloning-the-repository)
+- [3) Install dependencies](#installing-dependencies)
+- [4) Add the SLACK_WEBHOOK_URL secret to your repository](#add-the-slack_webhook_url-secret-to-your-repository)
+
+
 ### 1) Fork the repository
 
 1. Go to the repository page on GitHub: [https://github.com/shesharpnl/hackathon-2023.slack-bot.base-example](https://github.com/shesharpnl/hackathon-2023.slack-bot.base-example).  
@@ -87,6 +93,9 @@ That's it! Now the GitHub Workflow in your forked repository should be able to u
 This is how the Slack bot messages will look like:
 
 ![Screenshot of the bot on a Slack channel](./images/slack-messages.png)
+
+* [Inspect the GitHub Action execution logs](#inspect-the-github-action-execution-logs)
+* [Run the script.js directly from your local machine](#run-the-scriptjs-directly-from-your-local-machine)
 
 ### Inspect the GitHub Action execution logs
 
@@ -137,6 +146,9 @@ That's it! You should now be able to run the script and post a random job to the
 ![Screenshot of the script executed using your terminal](./images/executing-script.png)
 
 ## How this project works
+
+* [Scheduled GitHub Workflow](#scheduled-github-workflow)
+* [The scheduled script written in JavaScript](#the-scheduled-script-written-in-javascript)
 
 ### Scheduled GitHub Workflow
 
@@ -203,7 +215,6 @@ The JavaScript file contains three functions:
 
 - `postJobToSlack(webhookUrl, payload)`: This function takes a webhook URL and a payload and posts the payload to the Slack channel using a `fetch()` request. 
 
-
 ## Contributing
 
 Contributions to this project are welcome! If you find a bug, have a feature request, or want to contribute code, please follow these guidelines:
@@ -221,7 +232,7 @@ Thank you for your contributions!
 
 ## Credits
 
-The job data has been retrieved using [SourceStack](sourcestack.co).
+The job data has been retrieved using [SourceStack](https://sourcestack.co).
 
 ## License
 
