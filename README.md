@@ -32,6 +32,7 @@ Before you can install, use this project and add extra functionalities to it, yo
 - **A code editor**: this is the application that allows you to write and edit code. You can use any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/), or [Sublime Text](https://www.sublimetext.com/).
 - **JavaScript**: this is the programming language used in this project. You don't need to install it separately, as it comes pre-installed with most web browsers.
 - **A Slack webhook URL**: this is a special URL that allows your code to send messages to a Slack channel. For detailed instructions on setting up a webhook URL, please refer to the [Slack documentation](https://api.slack.com/messaging/webhooks).
+- **Node.js**: (Optional) This prerequisite is only necessary if you want to test the script locally as described [here](#run-the-scriptjs-directly-from-your-local-machine). You can install Node.js using a version manager like [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm#installing-and-updating) to quickly switch between different Node.js versions.
 
 Once you have all of these prerequisites, you're ready to move on to the installation steps.
 
